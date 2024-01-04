@@ -1,9 +1,9 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_preorder - goes through pre-order traversal
- * @tree: pointer to root
- * @func: function to print
+ * binary_tree_preorder - goes through
+ * @tree: pointer
+ * @func: function
  * return: no return
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
