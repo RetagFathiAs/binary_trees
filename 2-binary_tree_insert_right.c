@@ -2,9 +2,9 @@
 
 /**
  * *binary_tree_insert_right - insert a node.
- * @parent: pointer to parent node
- * @value: value of the node
- * Return: a pointer to the created node
+ * @parent: pointer
+ * @value: value
+ * Return: a pointer
  */
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
