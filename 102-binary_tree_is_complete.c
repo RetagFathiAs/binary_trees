@@ -84,41 +84,41 @@ void pop(levelorder_queue_t **head)
  */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
-	levelorder_queue_t *h, *t;
+	levelorder_queue_t *head, *tail;
 	unsigned char flag = 0;
 
 	if (tree == NULL)
 		return (0);
 
-	h = t = create_node((binary_tree_t *)tree);
-	if (h == NULL)
+	head = tail = create_node((binary_tree_t *)tree);
+	if (head == NULL)
 		exit(1);
 
-	while (h != NULL)
+	while (head != NULL)
 	{
-		if (h->node->left != NULL)
+		if (head->node->left != NULL)
 		{
 			if (flag == 1)
 			{
 				free_queue(head);
 				return (0);
 			}
-			push(h->node->left, h, &t);
+			push(head->node->left, head, &tail);
 		}
 		else
 			flag = 1;
-		if (h->node->right != NULL)
+		if (head->node->right != NULL)
 		{
 			if (flag == 1)
 			{
-				free_queue(h);
+				free_queue(head);
 				return (0);
 			}
-			push(head->node->right, h, &t);
+			push(head->node->right, head, &tail);
 		}
 		else
 			flag = 1;
-		pop(&h);
+		pop(&head);
 	}
 	return (1);
 }
